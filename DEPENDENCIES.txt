@@ -1,0 +1,29 @@
+# TimeLogger: A Light-Weight Implementation of a Time-Tracker/Recorder for Individuals' Personal Use
+# Copyright (C) 2021  David Bayani
+# 
+# This file is part of TimeLogger.
+# 
+# TimeLogger is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+# Contact Information:
+# 
+# Use the "discussion" or "issues" tab on the GitHub repo housing the original
+# public copy of this work, https://github.com/DBay-ani/TimeLogger
+# 
+
+The code provided in this repo was tested for use with the following software as dependencies:
+    git version 2.17.1
+    Python 3.6.9
+    gedit - Version 3.28.1
+    A modern Linux system; code was most often used on an Ubuntu 18.04 system (this is potentially relevant only for some querying to the OS; see makeOutputXML.py and getGitCommitHash.py )  

@@ -1,0 +1,113 @@
+# TimeLogger: A Light-Weight Implementation of a Time-Tracker/Recorder for Individuals' Personal Use
+# Copyright (C) 2021  David Bayani
+#
+# This file is part of TimeLogger.
+#
+# TimeLogger is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# Contact Information:
+#
+# Use the "discussion" or "issues" tab on the GitHub repo housing the original
+# public copy of this work, https://github.com/DBay-ani/TimeLogger
+#
+
+
+This file lists possible improvements / extensions of the program(s) provided
+in this repo.
+
+We limit detailing  improvements that involve the addition of clearly novel 
+features, focusing instead on low-hanging fruit for improving what is currently 
+offered using infrastructure already in place.
+
+
+Automatically handle the material listed under "Things to Do Before First Use" 
+in the README.txt file.
+
+    This should be fairly straight-forward to do. Since I (D Bayani) only needed
+    to do the initialization a few times, and I was the only one using the 
+    system, I didn't have a great incentive to address that. However, I 
+    understand that from a software-engineering perspective, this probably 
+    should have already been done.
+
+    It is debatable whether attempts should be make to automatically initialize 
+    a git repo in the folder holding the log-file, especially if the user 
+    changes the default storage location.
+
+    If we opt not to automatically initialize a git repo in the folder 
+    housing the log-file:
+        Issue an error-message (via the errorOutput.txt-file opening in gedit) 
+        to indicate when the user requests the log-file be committed, but has 
+        not initialized a git-repository in the location containing the 
+        log-file. At present, only a terminal warning is generated if this 
+        occurs, and it can easily be missed among the other output from 
+        TimeLogger. Below is an example of what that terminal-warning currently 
+        looks like:
+            The following paths are ignored by one of your .gitignore files:
+            houseForLog/timeLog.xml
+            Use -f if you really want to add them.
+            Autocommitted time log.
+        Note that this warning might not appear if the user decides to save the
+        log-file somewhere other than the default location.
+
+Move the temporary files to a directory called tmp
+    As mentioned in the section "Other Technical Details" in the README.txt 
+    file, TimeLogger generates a few temporary files as it operates. Instead of 
+    letting these sit around at the top-level of the repo, they should be stored
+    in a dedicated tmp directory, whose content - other than a .gitkeep file - 
+    are ignored via the top-level .gitignore file. In the current 
+    implementation, the temporary files generated include:
+        recentLogEntry.xml
+        tempStringForAutoCommit.sh
+        errorOutput.txt
+    If possible, moving any __pycache__ that is generated into a tmp folder 
+    would be prudent as well.
+
+
+
+
+Merging log-files:
+    While the log-files are designed to have enough information to allow
+    merging multiple of them, the code to do any merging has not been written.
+
+    All relevant information is present to merge records from multiple log-files
+    into one log-file. Namely, each log-entry records which log-file it was
+    originally from, along with the UUID of the prior-log entry, making the
+    provenance unambiguous. While merging records based on time may suite most
+    users (i.e., put the log-entries all into one log, sorted by time of 
+    occurrence), having the additional provenance information can be important 
+    for future reference and records - and especially if the times reported in
+    the original log files are systematically different / inaccurate.
+
+    For ordering log-entries, similar mechanism as employed for computing the 
+    duration can be used (e.g., converting times to seconds since the epoch, 
+    UTC). As such, see the section that deals with calculating duration for
+    suggestions to further pursue log-merging. To be clear, I would suggest in
+    some capacity retaining information about the link-list ordering in the
+    original log-files; it would be possible to recover the original chains from
+    the merged graph simply by traversing the merged graph, extracting entries
+    that have the same UUID listed for their original log-file, and linking them
+    based on ancestry in the merged graph.
+
+
+
+Reporting the Duration / Amount of Time Taken By Events
+    There is some code en route to providing this information, but, at this 
+    time, there is no program or script implemented in this repo at provides
+    duration information. Some work done in this direction can be seen in 
+    printLogs_timeBase.py. Of note, see the function convertTimeElementToSeconds
+    in timeElements.py ; using this function, it would be easy enough  to 
+    convert the times reported to seconds, calculate the difference in seconds,
+    then convert the difference into human-readable hours, minutes, etc., prior
+    to displaying it.
+

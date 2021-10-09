@@ -1,0 +1,8 @@
+houseForLog
+!houseForLog/templated_timeLog.xml
+!houseForLog/.gitignore
+!houseForLog/.gitkeep
+recentLogEntry.xml
+tempStringForAutoCommit.sh
+errorOutput.txt
+__pycache__

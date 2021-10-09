@@ -1,0 +1,102 @@
+<logEntry>
+<srtsw note="Self-Reported Time Started Writting Log Entry">
+    <minute></minute>
+    <hour></hour>
+    <day></day>
+    <month></month>
+    <year></year>
+    <timezone>EDT</timezone>
+</srtsw>
+
+<description>
+</description>
+
+<completed note="List of things that have been worked on/done since last entry. Things listed can be works-in-progress (i.e., 'completed' here does not necessarly mean 'finished')" >
+    <i>
+    </i>
+</completed>
+
+<next note="List of activities that are intended to do following the completetion of this log entry. The time-horizon for the materials listed are prefererrably the things that intended to do immedaitely following, but can stretch to include the list of all remaining things one is intending to do prior to sleeping for the day.">
+    <i>
+    </i>
+</next>
+
+<foodAndDrinkRelated>
+    <i>
+    <activity note="Cooking, eatting, etc.">
+    </activity>
+    <name note="Name of item cooked, eatten, etc.">
+    </name>
+    <nos note="number of servings">
+    </nos>
+    <tc note="total calories">
+    </tc>
+    <tpdvof note="total % dailly value of fat">
+    </tpdvof>
+    <tp note="total protein">
+    </tp>
+    <tpdvic note="total % dailly value of carbohydrates">
+    </tpdvic>
+    <time note="Time finished eating. Parts may be left blank, etc....">
+        <minute></minute>
+        <hour></hour>
+        <day></day>
+        <month></month>
+        <year></year>
+        <timezone>EDT</timezone>
+    </time>
+    </i>
+</foodAndDrinkRelated>
+
+<explicitExercise note="Exercise activities (e.g. talking a walk), not things that happened to be exercise without intent (e.g., moving)">
+</explicitExercise>
+
+<finances>
+    <transaction>
+    <otherParty>
+    </otherParty>
+    <methodOfPayment>
+    </methodOfPayment>
+    <amountExchanged>
+    </amountExchanged>
+    <purpose>
+    </purpose>
+    </transaction>
+</finances>
+
+<timeActivityBegan note="Time the activity reported in this log began, if not roughly the time the previous log finished (leave blank if this activity began roughly immediately after the previous log was finished being written).">
+    <minute></minute>
+    <hour></hour>
+    <day></day>
+    <month></month>
+    <year></year>
+    <timezone>EDT</timezone>
+</timeActivityBegan>
+
+<timeActivityFinished note="Time the activity reported in this log finished, if not roughly the time this log began being written (leave blank if this activity began roughly at the time this log began).">
+    <minute></minute>
+    <hour></hour>
+    <day></day>
+    <month></month>
+    <year></year>
+    <timezone>EDT</timezone>
+</timeActivityFinished>
+
+
+<srtfw note="Self-Reported Time Finished Writting Log Entry">
+    <minute></minute>
+    <hour></hour>
+    <day></day>
+    <month></month>
+    <year></year>
+    <timezone>EDT</timezone>
+</srtfw>
+
+<exitAfterEntry note="If Y, does not bring up another log-entry, instead exitting the program. Anything else, the recorder then brings up fresh entry.">N</exitAfterEntry>
+<commitLogFile note="If Y, issue a git command to commit the log-file (requires that the log-file be inside a work-tree git repo). Anything else, leaves changes to the log-file uncommitted (but, of course, present in the log-file).">N</commitLogFile>
+</logEntry>
+
+
+
+
+
